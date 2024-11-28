@@ -1,18 +1,16 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Button } from '@consta/uikit/Button';
-
+import React from "react";
+import { Layout } from "@consta/uikit/Layout"
 
 const Menu = () => {
     return (
-        <layout>
-            <NavLink to='/'>
-                <Button label='Главная страница' />
+        <Layout>
+            <NavLink to="/">
+                <Button label="Главная страница" />
             </NavLink>
-            <NavLink to='/service'>
-                <Button label='Страница услуг' />
+            <NavLink to="/service">
+                <Button label="Страница услуг" />
             </NavLink>
-        </layout>
-
+        </Layout>
     )
 }
+export default Menu;
