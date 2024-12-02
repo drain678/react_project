@@ -1,9 +1,11 @@
 export const AppRoute = {
     main: '/',
-    service: '/service',
-    profile: '/profile',
+    services: '/services',
     login: '/login',
-    sign_in: '/sign_in'
+    detail: '/services/:id',
+    userinfo: 'user/',
 }
 
-export const urlApi = 'http://your-api-url.com/';
+export const urlApi = 'https://673423afa042ab85d1190055.mockapi.io/api/v1/'
+
+export default AppRoute;
