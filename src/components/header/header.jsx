@@ -1,28 +1,46 @@
-import React from "react"
-import { Button } from "@consta/uikit/Button"
-import { User } from "@consta/uikit/User"
-import { useNavigate } from "react-router-dom"
-import { AppRoute } from '../../const'
-import { Layout } from "@consta/uikit/Layout"
-import Menu from '../menu/Menu'
+import React from "react";
+import { Button } from "@consta/uikit/Button";
+import { NavLink } from "react-router-dom";
+import AppPage from "../../const";
+import "./Header.css";
+import { Layout } from "@consta/uikit/Layout";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-    const navigate = useNavigate();
+    const user = useSelector((state) => state.user);
+
     return (
-        <header style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            position: "sticky",
-            top: 0,
-            paddingBottom: "20px",
-        }}>
-            <Layout>
-                <Menu />
-                <User />
-                <Button label="Вход" onClick={() => navigate(AppRoute.login)} />
-            </Layout>
-        </header>
-    )
-}
+        <Layout>
+            <div className="header">
+                <div className="header-container">
+                    {user.isAuthenticated ? (
+                        <div className="header-group left">
+                            <NavLink to={AppPage.main} className="header-button">
+                                <Button label="Главная страница" />
+                            </NavLink>
+                            <NavLink to={AppPage.services} className="header-button">
+                                <Button label="Услуги компании" />
+                            </NavLink>
+                        </div>
+                    ) : (
+                        <h3>Вы не зарегистрированы</h3>
+                    )}
+                    <div className="header-group right">
+                        {!user.isAuthenticated ? (
+                            <NavLink to={AppPage.login} className="header-button">
+                                <Button label="Вход" />
+                            </NavLink>
+                        ) : (
+                            <NavLink to={`${AppPage.userinfo}${user.id}`} className="header-button">
+                                <Button label="Профиль" />
+                            </NavLink>
+                        )}
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </Layout>
+    );
+};
 
 export default Header;
