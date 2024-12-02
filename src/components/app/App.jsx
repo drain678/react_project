@@ -1,8 +1,6 @@
 import React from 'react';
 import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
 
-import { Attachment } from '@consta/uikit/Attachment';
-import { Avatar } from '@consta/uikit/Avatar';
 import { Button } from '@consta/uikit/Button';
 import { IconBackward } from '@consta/icons/IconBackward';
 import { Card } from '@consta/uikit/Card';
@@ -13,6 +11,8 @@ import ServiceDetailPage from '../../pages/service-detail-page/ServiceDetailPage
 import MainPage from '../../pages/main-page/MainPage';
 import MainLayout from '../../layouts/main-layout/MainLayout';
 import { AppRoute } from '../../const';
+import LoginPage from '../../pages/login-page/LoginPage';
+// import SignIn from '../../pages/sign-in/SignIn';
 
 const App = function () {
   return (
@@ -23,15 +23,11 @@ const App = function () {
             <Route index element={<MainPage />} />
             <Route path={AppRoute.service} element={<ServicePage />} />
             <Route path={`${AppRoute.service}/:id`} element={<ServiceDetailPage />} />
+            <Route path={AppRoute.login} element={<LoginPage />} />
+            {/* <Route path={AppRoute.sign_in} element={<SignIn />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
-      <Attachment
-        withPictogram
-        fileName="Файл"
-        fileExtension="jpg"
-        fileDescription="14 Мб 01.04.2020, 07:01"
-      />
       <Card verticalSpace="2xl" horizontalSpace="2xl">
         <Button label="КНОПИЩА" iconLeft={IconBackward} />
         <Button label="кнпк поменьше" view="secondary" />
