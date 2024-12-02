@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 import { Outlet } from 'react-router-dom';
-import Header from '../../components/header/header';
-import Menu from '../../components/menu/Menu'
+import Header from "../../components/header/header";
 
 const MainLayout = () => {
     return (
         <div>
-            <Header/ >
-            {/* <Menu /> */}
-            <main>
+            <Header></Header>
+            <main style={{ paddingTop: '80px' }}>
+                <hr />
                 <Outlet />
             </main>
         </div>
