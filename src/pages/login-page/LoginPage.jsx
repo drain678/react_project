@@ -28,7 +28,7 @@ const LoginPage = () => {
     const handleSubmit = async () => {
         setError('');
         if (!username || !password) {
-            setError("Все поля должны быть заполнены");
+            setError("Все поля должны быть заполнены!");
             return;
         }
 
@@ -46,8 +46,8 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <Text size="l" view="primary" weight="bold" align="center" className="login-title">
-                Вход в сервис
+            <Text size="2xl" view="primary" weight="bold" align="center" className="login-title">
+                Вход в аккаунт
             </Text>
 
             <div className="login-form">

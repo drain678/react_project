@@ -6,7 +6,7 @@ const MainLayout = () => {
     return (
         <div>
             <Header></Header>
-            <main style={{ paddingTop: '80px' }}>
+            <main style={{ paddingTop: '100px' }}>
                 <hr />
                 <Outlet />
             </main>

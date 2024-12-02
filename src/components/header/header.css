@@ -27,9 +27,9 @@ body {
 }
 
 .header-button {
-    background-color: rgb(71, 100, 133);
-    color: black;
-    border: none;
+    background-color: #2b4d70;
+    color: white;
+    border: 1px solid transparent;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
