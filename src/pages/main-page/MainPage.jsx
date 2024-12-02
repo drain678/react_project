@@ -1,4 +1,4 @@
-import NewsList from "../../components/news_list/NewsList";
+import NewsList from "../../components/news-list/NewsList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { urlApi } from "../../const";

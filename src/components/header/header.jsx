@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@consta/uikit/Button";
 import { NavLink } from "react-router-dom";
 import AppPage from "../../const";
-import "./Header.css";
+import "./header.css";
 import { Layout } from "@consta/uikit/Layout";
 import { useSelector } from "react-redux";
 

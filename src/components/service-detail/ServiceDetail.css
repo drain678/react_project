@@ -47,7 +47,6 @@
     text-align: center;
   }
   
-  /* Описание услуги */
   .service-card__description {
     font-size: 16px;
     color: #666;
@@ -56,7 +55,6 @@
     text-align: center;
   }
   
-  /* Кнопка */
   .service-card__button {
     padding: 10px 20px;
     background-color: #4CAF50;
