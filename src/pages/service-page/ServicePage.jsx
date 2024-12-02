@@ -1,39 +1,27 @@
-import React from 'react'
-import { Grid, GridItem } from '@consta/uikit/Grid';
-import { Card } from '@consta/uikit/Card';
-import { Button } from '@consta/uikit/Button';
-import { Text } from '@consta/uikit/Text';
-import { Layout } from "@consta/uikit/Layout";
-import { faker } from '@faker-js/faker';
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ServicesList from "../../components/service-list/ServiceList";
+import { urlApi } from "../../const";
 
 const ServicePage = () => {
-    return (
-        <>
-            <div>ServicePage</div>
+    const URLServices = `${urlApi}services`;
+    const [servicesState, setServices] = useState([]);
+    useEffect(() => {
+        axios
+            .get(URLServices)
+            .then((response) => {
+                setServices(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching services:", error);
+            });
+    }, [URLServices]);
 
-            <Grid cols={3}>
-                {[1, 2, 3, 4, 5].map((item) => {
-                    return (
-                        <GridItem>
-                            <Card
-                                key={item}
-                                verticalSpace="xs"
-                                horizontalSpace="xs">
-                                <Layout>
-                                    <img src="" alt="" />
-                                    <Layout direction="column">
-                                        <Text>{faker.lorem.sentence()}</Text>
-                                        <Text>{faker.lorem.paragraph()}</Text>
-                                    </Layout>
-                                </Layout>
-                            </Card>
-                        </GridItem>
-                    )
-                })}
-            </Grid>
-        </>
-    )
-}
+    return (
+        <div>
+            <ServicesList data={servicesState} />
+        </div>
+    );
+};
 
 export default ServicePage;
