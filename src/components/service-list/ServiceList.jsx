@@ -29,13 +29,12 @@ const NewsList = ({ data }) => {
     <div className="services-list">
       <div className="news-list">
         {currentItems.map((item) => (
-          <div className="news-item" key={item.id}>
+          <div className="news-item" key={item.id} style={{display: "flex", justifyContent: "center"}}>
             <Service data={item} />
           </div>
         ))}
       </div>
 
-      {/* Пагинация */}
       <div className="pagination">
         <button
           onClick={prevPage}
