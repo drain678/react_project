@@ -6,6 +6,7 @@ import "./header.css";
 import { Layout } from "@consta/uikit/Layout";
 import { useSelector } from "react-redux";
 
+
 const Header = () => {
     const user = useSelector((state) => state.user);
 
@@ -15,16 +16,13 @@ const Header = () => {
                 <div className="header-container">
                     {user.isAuthenticated ? (
                         <div className="header-group left">
-                            <NavLink to={AppPage.main} className="header-button">
-                                <Button label="Главная страница" />
-                            </NavLink>
-                            <NavLink to={AppPage.services} className="header-button">
-                                <Button label="Услуги компании" />
-                            </NavLink>
                         </div>
                     ) : (
+                        <div className="header-group left">
                         <h3>Вы не зарегистрированы</h3>
+                        </div>
                     )}
+                    
                     <div className="header-group right">
                         {!user.isAuthenticated ? (
                             <NavLink to={AppPage.login} className="header-button">
@@ -32,7 +30,7 @@ const Header = () => {
                             </NavLink>
                         ) : (
                             <NavLink to={`${AppPage.userinfo}${user.id}`} className="header-button">
-                                <Button label="Профиль" />
+                                    <Button label={`${user.firstName} ${user.lastName}`} />
                             </NavLink>
                         )}
                     </div>
