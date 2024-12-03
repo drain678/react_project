@@ -16,9 +16,18 @@ const Header = () => {
                 <div className="header-container">
                     {user.isAuthenticated ? (
                         <div className="header-group left">
+                            <NavLink to={AppPage.main} className="header-button">
+                                <Button label="Главная страница" />
+                            </NavLink>
+                            <NavLink to={AppPage.services} className="header-button">
+                                <Button label="Услуги компании" />
+                            </NavLink>
                         </div>
                     ) : (
                         <div className="header-group left">
+                                <NavLink to={AppPage.main} className="header-button">
+                                    <Button label="Главная страница" />
+                                </NavLink>
                         <h3>Вы не зарегистрированы</h3>
                         </div>
                     )}
